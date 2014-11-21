@@ -2,30 +2,61 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script>
+    if (!inx) var inx = {};
+    inx={
+        toogler: function(btn,para) {
+            $(document).ready(function () {
+                $(btn).click(function () {
+                    $(para).toggle();
+                });
+            });
+        }
+    }
+</script>
+
+<div class="jumbotron" style="background-image: url(/Images/mega_university.png); background-size: cover">
+    <h1 style="color: white">Mega University</h1>
+    <p class="lead" style="color: white; ">Mega University is world renowned university.</p>
+    <p><button id="btnMng" type="button" class="btn btn-primary btn-large">Learn more &raquo;</button></p>
+    <div id="meaning" style="display:none"><p style="font-size: medium; color: white; ">The university is famous one means that it houses sharp students and professors.<br /> It is a great university of world.</p></div>    
+    <script>inx.toogler("#btnMng","#meaning");</script>   
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Welcome to Mega University</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Mega University is the university with 1st rank in the world as per ranking performed by UNESCO on @(DateTime.Now.Year-5).
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Our Team</h2>
+        <p>Mega University was established in 1950.</p>
+        <p><button id="btnDat" type="button" class="btn btn-default">More Facts &raquo;</button></p>
+        <div id="data" style="display:none">
+            <table border="0">
+                <tr><td>Faculty Size:</td><td>5000</td></tr>
+                <tr><td>Student Size:</td><td>100000</td></tr>
+            </table>
+        </div>
+        <script>inx.toogler("#btnDat", "#data");</script>        
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Pecularity</h2>
+        <p>Our students generate knowledge, money is just the byproduct.</p> 
+        <p><button id="btnGol" type="button" class="btn btn-default">Salient Features &raquo;</button></p>
+        <div id="goals" style="display:none">
+            <ul>
+                <li>Unmatched set of academic libraries</li>
+                <li>Phenomenal art museum</li>
+                <li>Collection of Chinese bronzes</li>
+                <li>Interesting campus daily newspaper</li>
+                <li>Country's top college students</li>
+                <li>Public transportation for students' fun</li>
+            </ul>
+        </div>
+        <script>inx.toogler("#btnGol", "#goals");</script>        
     </div>
 </div>
